@@ -1,0 +1,72 @@
+---
+
+---
+
+<header class="header">
+  <div class="header__logo">
+    <a href="/" class="header__logo-link">AskExperts</a>
+  </div>
+
+  <nav class="header__nav">
+    <ul class="header__nav-list">
+      <li><a href="/" class="header__nav-item">Home</a></li>
+      <li><a href="/about" class="header__nav-item">About</a></li>
+      <li><a href="/services" class="header__nav-item">Services</a></li>
+      <li><a href="/contact" class="header__nav-item">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="header__actions">
+    <a href="/login" class="btn btn--secondary">Login</a>
+  </div>
+</header>
+<style>
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--secondary-color-02);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .header__logo-link {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color-03);
+    text-decoration: none;
+  }
+
+  .header__nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 2rem;
+  }
+
+  .header__nav-item {
+    text-decoration: none;
+    color: var(--primary-color-03);
+    font-size: 1rem;
+  }
+
+  .header__nav-item:hover {
+    color: var(--primary-color-01);
+  }
+
+  .btn--secondary {
+    background-color: var(--primary-color-03);
+    color: var(--secondary-color-02);
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+
+  .btn--secondary:hover {
+    background-color: var(--primary-color-01);
+    color: var(--primary-color-03);
+  }</style>
+ 
