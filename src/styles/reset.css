@@ -1,0 +1,45 @@
+/* reset.css */
+@layer reset {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  ul,
+  ol {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  body {
+    line-height: 1.5;
+    background-color: #ffffff;
+    color: #000000;
+  }
+
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit; /* arver font og style fra body */
+  }
+
+  img,
+  picture {
+    max-width: 100%;
+    display: block;
+  }
+
+  header,
+  footer,
+  main,
+  section,
+  article {
+    container-type: inline-size;
+  }
+}

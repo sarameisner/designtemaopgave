@@ -1,0 +1,30 @@
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-family-heading); /* cabin */
+    color: var(--primary-color-03); /* sort som standard overskriftsfarve */
+    margin-top: 0;
+    margin-bottom: 1rem;
+    text-wrap: balance;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  p,
+  li,
+  figcaption {
+    max-width: 65ch;
+    text-wrap: pretty;
+  }
+}
