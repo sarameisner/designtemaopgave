@@ -1,9 +1,13 @@
 @layer components {
   /* knapperne */
+  .loginbtn {
+    background-color: --primary-color-01;
+  }
+
   .btn {
     font-size: 1rem;
-    padding: 0.5rem 1.5rem;
-    border-radius: 25px;
+    padding: 4px 16px;
+    border-radius: 20px;
     border: 2px solid transparent;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
@@ -23,7 +27,7 @@
 
   /* den gule knap */
   .btn-secondary {
-    background-color: var(--primary-color-01);
+    background-color: var(--navigation-color-01);
     color: var(--primary-color-03);
   }
 

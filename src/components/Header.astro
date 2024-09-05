@@ -10,30 +10,32 @@
   <nav class="header__nav">
     <ul class="header__nav-list">
       <li><a href="/" class="header__nav-item">Home</a></li>
+      <li><a href="/case-study" class="header__nav-item">Case Study</a></li>
+      <li><a href="/team" class="header__nav-item">Team</a></li>
       <li><a href="/about" class="header__nav-item">About</a></li>
-      <li><a href="/services" class="header__nav-item">Services</a></li>
-      <li><a href="/contact" class="header__nav-item">Contact</a></li>
     </ul>
   </nav>
 
   <div class="header__actions">
-    <a href="/login" class="btn btn--secondary">Login</a>
+    <a href="/login" class="loginbtn">Login</a>
   </div>
 </header>
 <style>
+  @layer components {
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background-color: var(--secondary-color-02);
+    background-color: var(--navigation-color-01);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10.5px);
   }
 
   .header__logo-link {
     font-size: 1.5rem;
     font-weight: bold;
-    color: var(--primary-color-03);
+    color: var(--secondary-color-02);
     text-decoration: none;
   }
 
@@ -47,7 +49,7 @@
 
   .header__nav-item {
     text-decoration: none;
-    color: var(--primary-color-03);
+    color: var(--secondary-color-02);
     font-size: 1rem;
   }
 
@@ -55,18 +57,16 @@
     color: var(--primary-color-01);
   }
 
-  .btn--secondary {
-    background-color: var(--primary-color-03);
-    color: var(--secondary-color-02);
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 1rem;
-  }
+.loginbtn {
+ background-color: var(--primary-color-01);
+ font-size: 1rem;
+ padding: 4px 16px;
+ border-radius: 20px;
+ border: 2px solid transparent;
+ cursor: pointer;
+ transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
 
-  .btn--secondary:hover {
-    background-color: var(--primary-color-01);
-    color: var(--primary-color-03);
-  }</style>
+  }
+  </style>
  

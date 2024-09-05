@@ -1,12 +1,13 @@
 /* global.css */
+@layer reset, components, base;
 
 /* skrifttyper */
 @import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 
-@import url("./reset.css");
-@import url("./base.css");
-@import url("./components.css");
+@import url("./reset.css") layer(reset);
+@import url("./components.css") layer(components);
+@import url("./base.css") layer(base);
 
 @layer global {
   :root {
@@ -15,19 +16,36 @@
     --primary-color-03: #181818; /* sort */
     --secondary-color-01: #f5f5f5; /* lyse grå */
     --secondary-color-02: #ffffff; /* hvid */
-
+    --navigation-color-01: rgba(27, 27, 27, 0.91);
     --font-family-base: "Lato", sans-serif; /* brødtekst */
     --font-family-heading: "Cabin", sans-serif; /* overskrifter */
 
     --font-size-base: 16px;
     --line-height-base: 1.5;
-  }
 
-  body {
-    font-family: var(--font-family-base);
-    font-size: var(--font-size-base);
-    line-height: var(--line-height-base);
-    color: var(--primary-color-03); /* sort som basis tekstfarve */
-    background-color: var(--secondary-color-02); /* hvid baggrund */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: var(--font-family-heading); /* cabin */
+      color: var(--primary-color-03); /* sort som standard overskriftsfarve */
+      margin-top: 0;
+      margin-bottom: 1rem;
+      text-wrap: balance;
+    }
+
+    h1 {
+      font-size: 3.125rem;
+      font-weight: 700;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 700;
+    }
   }
 }

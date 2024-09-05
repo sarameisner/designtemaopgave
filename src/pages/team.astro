@@ -1,0 +1,13 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import EmployeeCard from "../components/EmployeeCard.astro";
+
+import EmployeeSection from "../components/EmployeeSection.astro";
+
+const employeeData = await fetch("https://raw.githubusercontent.com/sarameisner/frontend-design/main/resources/json/employees.json").then((res) => res.json());
+---
+
+<BaseLayout title="Team">
+  <EmployeeCard />
+  <EmployeeSection data={employeeData} />
+</BaseLayout>
