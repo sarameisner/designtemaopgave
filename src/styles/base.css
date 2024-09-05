@@ -1,16 +1,2 @@
 @layer base {
-  p,
-  li,
-  figcaption {
-    max-width: 65ch;
-    text-wrap: pretty;
-  }
-
-  body {
-    font-family: var(--font-family-base);
-    font-size: var(--font-size-base);
-    line-height: var(--line-height-base);
-    color: var(--primary-color-03); /* sort som basis tekstfarve */
-    background-color: var(--secondary-color-02); /* hvid baggrund */
-  }
 }

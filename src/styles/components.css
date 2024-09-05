@@ -13,10 +13,11 @@
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
   }
 
-  /* den sorte knap */
   .btn-primary {
     background-color: var(--primary-color-03);
     color: var(--secondary-color-02);
+    padding: 16px 32px;
+    border-radius: 100px;
   }
 
   .btn-primary:hover {
@@ -27,8 +28,10 @@
 
   /* den gule knap */
   .btn-secondary {
-    background-color: var(--navigation-color-01);
+    background-color: var(--primary-color-01);
     color: var(--primary-color-03);
+    padding: 16px 32px;
+    border-radius: 100px;
   }
 
   .btn-secondary:hover {

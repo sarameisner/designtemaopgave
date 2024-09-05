@@ -63,10 +63,6 @@ h6 {
   margin: 0;
 }
 
-p {
-  text-wrap: pretty;
-}
-
 a[class]:any-link {
   color: currentColor;
   text-decoration: none;
@@ -189,5 +185,19 @@ textarea:not([rows]) {
     transition-duration: 0.01s !important;
     animation-iteration-count: 1 !important;
     animation: 0.01s !important;
+  }
+  p,
+  li,
+  figcaption {
+    text-wrap: pretty;
+    max-width: 65ch;
+  }
+
+  body {
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    color: var(--primary-color-03); /* sort som basis tekstfarve */
+    background-color: var(--secondary-color-02); /* hvid baggrund */
   }
 }

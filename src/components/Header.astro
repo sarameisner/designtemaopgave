@@ -20,8 +20,10 @@
     <a href="/login" class="loginbtn">Login</a>
   </div>
 </header>
+
 <style>
-  @layer components {
+
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -57,16 +59,41 @@
     color: var(--primary-color-01);
   }
 
-.loginbtn {
- background-color: var(--primary-color-01);
- font-size: 1rem;
- padding: 4px 16px;
- border-radius: 20px;
- border: 2px solid transparent;
- cursor: pointer;
- transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-}
-
+ .loginbtn {
+   background-color: var(--primary-color-01);
+   font-size: 1rem;
+   padding: 4px 16px;
+   border-radius: 20px;
+   border: 2px solid transparent;
+   cursor: pointer;
+   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
   }
-  </style>
+
+
+  /* mobil */
+@media (max-width: 768px) {
+  .header {
+    padding: 1rem;
+  }
+
+  .header__logo-link {
+    font-size: 1.2rem; 
+  }
+
+  .header__nav-list {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .header__nav-item {
+    font-size: 0.9rem; 
+  }
+
+  .loginbtn {
+    padding: 0.4rem 1rem; 
+    font-size: 0.9rem; 
+  }
+}   
  
+</style>
