@@ -8,10 +8,96 @@ import sarah from "../assets/images/sarah.jpg";
 
 <BaseLayout title="Home">
   <section class="hero">
-    <article class="tekst-knap">
+
+    <article class="herotext">
       <h1>Adam Buschemia Business Consultant</h1>
       <p>Get help from Alex Moore, a professional business coach with advanced experience on growth and business scaling.</p>
     </article>
-    <Image alt="sarah" src={sarah} />
+    
+   
+    <div class="hero-image">
+      <Image alt="sarah" src={sarah} />
+    </div>
   </section>
-  </BaseLayout>
+</BaseLayout>
+<style>
+ .hero {
+  display: flex;
+  align-items: stretch; 
+  justify-content: space-between;
+  background-color: var(--primary-color-03);
+  gap: 2rem;
+  height: 100vh; 
+  width: 100vw; 
+  overflow: hidden;
+  margin: 0; 
+  padding: 0; 
+}
+
+.herotext {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  color: var(--secondary-color-02);
+  padding: 2rem;
+  max-width: 30rem;
+  margin-left: 3rem;
+}
+
+.herotext h1 {
+  color: var(--secondary-color-02);
+  margin-bottom: 1.25rem;
+  font-size: 2.5rem;
+}
+
+.herotext p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: stretch; 
+  max-width: 50vw; 
+  height: 100%; 
+  overflow: hidden;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  margin: 0; 
+  padding: 0; 
+}
+
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    padding: 0; 
+    height: auto; 
+  }
+
+  .herotext {
+    max-width: 100%;
+    text-align: center;
+    margin-left: 0;
+    padding: 1.5rem; 
+  }
+
+  .hero-image {
+    max-width: 100%;
+    margin-top: 1.25rem;
+    height: auto; 
+  }
+
+  .hero-image img {
+    max-width: 100%;
+    height: auto; 
+  }
+}
+  </style>
