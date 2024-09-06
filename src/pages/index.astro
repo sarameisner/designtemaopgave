@@ -1,11 +1,17 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import sarah from "../assets/images/sarah.jpg";
 // import { Icon } from 'astro-icon/components'
-// import { Image } from 'astro:assets';
-// import daisy from "../assets/images/daisy.jpg";
 
 ---
 
 <BaseLayout title="Home">
-
-</BaseLayout>
+  <section class="hero">
+    <article class="tekst-knap">
+      <h1>Adam Buschemia Business Consultant</h1>
+      <p>Get help from Alex Moore, a professional business coach with advanced experience on growth and business scaling.</p>
+    </article>
+    <Image alt="sarah" src={sarah} />
+  </section>
+  </BaseLayout>
