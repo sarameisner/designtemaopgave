@@ -1,4 +1,6 @@
 ---
+import Popover from "../components/Popover.astro";
+
 
 ---
 
@@ -15,15 +17,15 @@
       <li><a href="/about" class="header__nav-item">About</a></li>
     </ul>
   </nav>
-
-  <div class="header__actions">
+  <Popover />
+  <!-- <div class="header__actions">
     <a href="/login" class="loginbtn">Login</a>
-  </div>
+  </div> -->
 </header>
 
 <style>
 
-
+@layer components {
 .header {
     display: flex;
     justify-content: space-between;
@@ -59,15 +61,7 @@
     color: var(--primary-color-01);
   }
 
- .loginbtn {
-   background-color: var(--primary-color-01);
-   font-size: 1rem;
-   padding: 4px 16px;
-   border-radius: 20px;
-   border: 2px solid transparent;
-   cursor: pointer;
-   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-  }
+
 
 
   /* mobil */
@@ -95,5 +89,5 @@
     font-size: 0.9rem; 
   }
 }   
- 
+ }
 </style>
