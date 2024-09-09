@@ -9,19 +9,23 @@ const { style = "btn-primary", link = "#", label = "Button", target = "_self" } 
     .btn {
       display: inline-block;
       font-size: 1rem;
-      padding: 0.25rem 1rem; /* Justeret padding til dine knapper */
-      border-radius: 1.25rem; /* 20px */
+      padding: 0.25rem 1rem; 
+      border-radius: 1.25rem; 
       border: 2px solid transparent;
       cursor: pointer;
       transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
       text-decoration: none;
+      background-color: var(--primary-color-03);
+      color: var(--secondary-color-02);
+      padding: 1rem 2rem; 
+      border-radius: 6.25rem; 
     }
 
     .btn-primary {
       background-color: var(--primary-color-03);
       color: var(--secondary-color-02);
-      padding: 1rem 2rem; /* 16px 32px */
-      border-radius: 6.25rem; /* 100px */
+      padding: 1rem 2rem; 
+      border-radius: 6.25rem; 
     }
 
     .btn-primary:hover {
@@ -33,8 +37,8 @@ const { style = "btn-primary", link = "#", label = "Button", target = "_self" } 
     .btn-secondary {
       background-color: var(--primary-color-01);
       color: var(--primary-color-03);
-      padding: 1rem 2rem; /* 16px 32px */
-      border-radius: 6.25rem; /* 100px */
+      padding: 1rem 2rem; 
+      border-radius: 6.25rem; 
     }
 
     .btn-secondary:hover {
@@ -45,9 +49,9 @@ const { style = "btn-primary", link = "#", label = "Button", target = "_self" } 
     .btn-login {
       background-color: var(--primary-color-01);
       color: var(--secondary-color-02);
-      padding: 0.5rem 1rem; /* Justeret padding */
-      border-radius: 1.25rem; /* 20px */
-      font-size: 0.9rem; /* Mindre tekststørrelse */
+      padding: 0.5rem 1rem; 
+      border-radius: 1.25rem; 
+      font-size: 0.9rem; 
     }
 
     .btn-login:hover {

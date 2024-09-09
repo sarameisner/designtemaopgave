@@ -2,102 +2,123 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
 import sarah from "../assets/images/sarah.jpg";
-// import { Icon } from 'astro-icon/components'
-
+import Card from "../components/Card.astro";
 ---
 
 <BaseLayout title="Home">
-  <section class="hero">
-
-    <article class="herotext">
-      <h1>Adam Buschemia Business Consultant</h1>
-      <p>Get help from Alex Moore, a professional business coach with advanced experience on growth and business scaling.</p>
-    </article>
-    
-   
+  <section class="hero-grid">
+    <div class="hero-content">
+      <article class="herotext">
+        <h1>Adam Buschemia Business Consultant</h1>
+        <p>Get help from Alex Moore, a professional business coach with advanced experience on growth and business scaling.</p>
+        <button class="cta-button">Book a Meeting</button>
+      </article>
+    </div>
     <div class="hero-image">
       <Image alt="sarah" src={sarah} />
     </div>
+    <div class="cards">
+  <Card style="primary" buttonProps={{ style: "primary" }} h6="Finance & Restructuring" tekst="Get help from Alex Moore, a professional business coach with advanced experience on growth and business scaling.">Learn More</Card>
+  <Card style="primary" buttonProps={{ style: "primary" }} h6="Our Approach" tekst="Get help from Alex Moore, a professional business coach with advanced experience on growth and business scaling.">Discover</Card>
+  <Card style="primary" buttonProps={{ style: "primary" }} h6="Consultalk Result" tekst="Get help from Alex Moore, a professional business coach with advanced experience on growth and business scaling.">Get Started</Card>
+    </div>
   </section>
 </BaseLayout>
+
 <style>
- .hero {
-  display: flex;
-  align-items: stretch; 
-  justify-content: space-between;
-  background-color: var(--primary-color-03);
-  gap: 2rem;
-  height: 100vh; 
-  width: 100vw; 
-  overflow: hidden;
-  margin: 0; 
-  padding: 0; 
+
+body {
+  margin: 0;
+  padding: 0;
 }
 
-.herotext {
-  flex: 1;
+.hero-grid {
+  background-color: var(--primary-color-03);
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: auto auto;  
+  gap: 2rem;
+  width: 100%;
+  max-width: 100vw; 
+  margin: 0 auto;
+}
+
+.hero-content {
+  grid-column: 1 / 2; 
+  grid-row: 1 / 2; 
   display: flex;
   flex-direction: column;
-  justify-content: center; 
-  color: var(--secondary-color-02);
+  justify-content: center;
   padding: 2rem;
-  max-width: 30rem;
-  margin-left: 3rem;
+}
+
+.hero-image {
+  grid-column: 2 / 3; 
+  grid-row: 1 / 2; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; 
+  height: 100vh; 
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100vh; 
+  object-fit: cover; 
+}
+
+.cards {
+  grid-column: 1 / 3; 
+  grid-row: 1 / 6; 
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 2rem;
+  align-self: end; 
+  justify-content: center;
+  justify-items: center;
+
 }
 
 .herotext h1 {
-  color: var(--secondary-color-02);
-  margin-bottom: 1.25rem;
   font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--secondary-color-02);
 }
 
 .herotext p {
   font-size: 1.2rem;
   line-height: 1.6;
+  color: var(--secondary-color-02);
 }
 
-.hero-image {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-  align-items: stretch; 
-  max-width: 50vw; 
-  height: 100%; 
-  overflow: hidden;
+.cta-button {
+  padding: 12px 24px;
+  background-color: var(--primary-color-01);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 1.5rem;
 }
-
-.hero-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; 
-  margin: 0; 
-  padding: 0; 
-}
-
 
 @media (max-width: 768px) {
-  .hero {
-    flex-direction: column;
-    padding: 0; 
-    height: auto; 
-  }
-
-  .herotext {
-    max-width: 100%;
-    text-align: center;
-    margin-left: 0;
-    padding: 1.5rem; 
+  .hero-grid {
+    grid-template-columns: 1fr; 
+    grid-template-rows: auto auto auto; 
   }
 
   .hero-image {
-    max-width: 100%;
-    margin-top: 1.25rem;
-    height: auto; 
+    grid-column: 1; 
+    height: 50vh; 
   }
 
-  .hero-image img {
-    max-width: 100%;
-    height: auto; 
+  .cards {
+    grid-column: 1; 
+    grid-row: 3; 
+    grid-template-columns: 1fr; /
+    margin-top: 0; 
+    align-self: center; 
   }
 }
-  </style>
+</style>
