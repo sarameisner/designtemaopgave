@@ -2,77 +2,95 @@
 
 ---
 
-<button popovertarget="popup" class="loginbtn">Login</button>
+
+<button popovertarget="popup" class="btn btn-primary">Login</button>
 
 <div popover id="popup">
   <h4>Dashboard Login</h4>
   <form action="/submit-form" method="POST">
-    <input value="Enter Email" type="text" name="name" required />
-
-    <input value="Enter Password" type="email" name="email" required />
-
-    <input class="submit" type="submit" value="Submit" name="Show Dashboard" />
+    <input placeholder="Enter Email" type="email" name="email" required />
+    <input placeholder="Enter Password" type="password" name="password" required />
+    <input class="btn btn-secondary submit" type="submit" value="Show Dashboard" />
   </form>
 </div>
 
 <style>
+
   [popover]::backdrop {
     background: #0004;
     backdrop-filter: blur(16px);
   }
 
-   .loginbtn {
-   background-color: var(--primary-color-01);
-   font-size: 1rem;
-   padding: 4px 16px;
-   border-radius: 20px;
-   border: 2px solid transparent;
-   cursor: pointer;
-   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  .btn-primary {
+    background-color: var(--primary-color-01);
+    font-size: 1rem;
+    padding: 8px 20px; 
+    border-radius: 20px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
   }
 
-  .submit {
-    background-color: #ffcc4a;
-  }
-  label {
-    display: flex;
-    width: 382px;
-    padding: 24px 33px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    border-radius: 54px;
-    border: 1px solid #e3e3e3;
-    background: #fff;
+  .btn-primary:hover {
+    background-color: var(--secondary-color-02);
+    color: var(--primary-color-01);
   }
 
-  input {
-    border-radius: 100px;
-    background: var(--secondary-color-02);
-    padding: 12px;
-  }
-
+  /* Stil til popover-indholdet */
   #popup {
-    min-width: 750px;
-    padding: 40px 60px 60px 60px;
+    display: none; 
+    min-width: 30rem; 
+    padding: 2.5rem;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    gap: 10px;
+    gap: 1rem;
     background-color: #181818;
-    border-radius: 40px;
-    &:popover-open {
-      display: flex;
-    }
+    border-radius: 1.5rem;
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    z-index: 1000; 
+  }
 
-    h4 {
-      color: #fff;
-      text-align: center;
-      font-family: Cabin;
-      font-size: 45px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: 116%; /* 52.2px */
-    }
+  /* når popoveren skal åbnes */
+  #popup:popover-open {
+    display: flex;
+  }
+
+  /* Tekststil */
+  #popup h4 {
+    color: #fff;
+    text-align: center;
+    font-family: 'Cabin', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.16; 
+  }
+
+ 
+  input {
+    border-radius: 1.5rem;
+    background: var(--secondary-color-02);
+    padding: 0.75rem 1rem;
+    border: none; 
+    margin-bottom: 1rem; 
+    width: 100%;
+  }
+
+  .submit {
+    background-color: var(--primary-color-01);
+    color: var(--secondary-color-02);
+    border: none; 
+    cursor: pointer;
+    padding: 0.75rem 1.5rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: 100%;
+  }
+
+  .submit:hover {
+    background-color: var(--secondary-color-02);
+    color: var(--primary-color-01);
   }
 </style>
