@@ -1,0 +1,103 @@
+---
+const { surface = 'team', tag, headline } = Astro.props;
+---
+
+<div data-surface={surface} class="hero full">
+  <div class="content">
+    <div class="content-background">
+        <div class="tag">
+            <p>{tag}</p>
+        </div>
+        <h1>{headline}</h1>
+    </div>
+  </div>
+</div>
+
+<style>
+  @layer components {
+   
+    [data-surface="team"] {
+      --background-image: url("src/assets/images/hero-team.jpeg");  
+    }
+    
+    [data-surface="about"] {
+      --background-image: url("src/assets/images/hero-about.jpeg");  
+    }
+
+    [data-surface="case"] {
+      --background-image: url("src/assets/images/hero-case.jpeg");  
+    }
+
+    
+    .hero {
+      background-image: var(--background-image);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      padding: 9rem 0; 
+
+     .content {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      padding-left: 2rem; 
+    }
+
+      .content-background {
+        border-radius: 1.75rem; 
+        background: rgba(255, 255, 255, 0.85); 
+        backdrop-filter: blur(5.5px);
+        display: inline-block;
+        padding: 2.5rem 2.75rem; 
+        max-width: 48rem; 
+        text-align: center;
+
+
+        .tag {
+          padding: 0.25rem 1rem; 
+          background: var(--primary-color-01); 
+          color: var(--primary-color-03); 
+          display: inline-block;
+          border-radius: 1.25rem; 
+          margin-bottom: 1rem;
+        }
+
+        h1 {
+          font-size: 2.5rem; 
+          color: var(--primary-color-03); 
+          margin-bottom: 1.5rem; 
+        }
+      }
+    }
+
+    
+    @media (max-width: 1024px) {
+      .hero {
+        padding: 6rem 0; 
+        
+        .content-background {
+          padding: 2.5rem 3rem; 
+          max-width: 100%;
+          h1 {
+            font-size: 2rem; 
+          }
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 4rem 0; 
+        
+        .content-background {
+          padding: 2rem 2.5rem; 
+          h1 {
+            font-size: 1.75rem; 
+          }
+        }
+      }
+    }
+
+   
+  }
+</style>
