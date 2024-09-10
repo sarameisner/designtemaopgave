@@ -1,0 +1,114 @@
+---
+
+---
+
+<div class="container">
+<section class="case-box">
+    <div class="case-details">
+        <div class="case-info">
+            <div class="case-column">
+                <p class="case-title">Case Name</p>
+                <p>Taxes & Efficiency</p>
+            </div>
+            <div class="case-column">
+                <p class="case-title">Category</p>
+                <p>Business</p>
+            </div>
+            <div class="case-column">
+                <p class="case-title">Date</p>
+                <p>27th September 2022</p>
+            </div>
+        </div>
+        <div class="case-preview">
+            <a href="#" class="btn-primary">Live Preview</a>
+        </div>
+    </div>
+</section>
+</div>
+
+<style>
+  
+  .container{
+    padding: 2rem;
+  }
+
+    .case-box {
+        position: relative;
+        margin-bottom: 2.5rem; 
+        background-image: url("../assets/casestudy.png");
+        height: 28.125rem; 
+        border-radius: 1.25rem;
+        padding: 1rem; 
+
+        .case-details {
+            display: flex;
+            justify-content: space-between;
+            padding: 2.5rem 3.75rem; 
+            background: var(--primary-color-03); 
+            color: var(--secondary-color-02); 
+            border-radius: 1.25rem; 
+            position: absolute;
+            bottom: -2.5rem; 
+            left: 50%;
+            transform: translateX(-50%);
+            width: 56.25rem; 
+
+            
+            .case-info {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2.5rem; 
+                
+                .case-column {
+                    .case-title {
+                        font-size: 1.25rem;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+
+        .case-preview {
+            align-self: center;
+        }
+
+   
+        .btn-primary {
+            padding: 0.75rem 1.5rem;
+            background-color: var(--primary-color-01); 
+            color: var(--primary-color-03);
+            border: none;
+            border-radius: 1.25rem; 
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-color-02); 
+        }
+
+       
+        @media (max-width: 600px) {
+
+            .case-details {
+                width: 100%;
+                flex-direction: column;
+                position: static;
+                padding: 1.25rem; 
+                text-align: center;
+                top: auto;
+
+                .case-info {
+                    grid-template-columns: 1fr;
+                    gap: 1rem; 
+                }
+
+                .case-preview {
+                    margin-top: 1.25rem; 
+                }
+            }
+        }
+    }
+</style>

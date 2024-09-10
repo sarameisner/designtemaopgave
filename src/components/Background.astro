@@ -1,7 +1,7 @@
 ---
 const { surface = 'team', tag, headline } = Astro.props;
 ---
-
+<!-- data-surface brugt til at styre hvilket baggrundsbillede der skal vises -->
 <div data-surface={surface} class="hero full">
   <div class="content">
     <div class="content-background">
@@ -14,8 +14,10 @@ const { surface = 'team', tag, headline } = Astro.props;
 </div>
 
 <style>
+     
   @layer components {
    
+    /* de forskellige baggrundsbilleder baseret på surface propsene */
     [data-surface="team"] {
       --background-image: url("src/assets/images/hero-team.jpeg");  
     }
