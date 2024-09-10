@@ -1,8 +1,10 @@
 ---
-const { style = "btn-primary", link = "#", label = "Button", target = "_self" } = Astro.props;
+const { style = "btn-primary", link = "#", target = "_self" } = Astro.props;
 ---
 
-<a href={link} target={target} class={`btn ${style}`}>{label}</a>
+<a href={link} target={target} class={`btn ${style}`}>
+  <slot>Button</slot> 
+</a>
 
 <style>
   @layer components {

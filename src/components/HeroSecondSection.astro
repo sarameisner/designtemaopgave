@@ -1,0 +1,103 @@
+---
+const { heading, subheading, items } = Astro.props;
+import { Image } from "astro:assets";
+import home1 from "../assets/home1.jpg";
+import { Icon } from 'astro-icon/components';
+---
+
+<section class="hero-second-section">
+  <div class="image-container">
+    <Image alt="Team discussion" src={home1} />
+  </div>
+  <div class="text-container">
+    <span class="tagline">We'll Work With You</span>
+    <h2>{heading}</h2>
+    <p>{subheading}</p>
+    
+    <ul class="items-list">
+      {items.map((item) => (
+        <li>
+          <Icon name="Tick" />
+          <p>{item}</p>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .hero-second-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 2rem;
+    padding: 3rem 5%; 
+    background-color: #fff;
+  }
+
+  .image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--primary-color-03);
+  }
+
+  .tagline {
+    display: inline-block;
+    background-color: var(--primary-color-01);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .text-container h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .text-container p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    width: 95%;
+  }
+
+  .items-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .items-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+
+  .items-list li p {
+    margin: 0;
+  }
+
+  .items-list svg {
+    width: 20px;
+    color: var(--primary-color-01);
+  }
+
+  /* Mobiltilpasning */
+  @media (max-width: 768px) {
+    .hero-second-section {
+      grid-template-columns: 1fr; 
+    }
+
+    .image-container {
+      margin-bottom: 2rem;
+    }
+  }
+</style>
