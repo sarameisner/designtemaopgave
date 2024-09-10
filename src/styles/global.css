@@ -21,7 +21,6 @@
     --font-family-heading: "Cabin", sans-serif; /* overskrifter */
     --font-size-base: 16px;
     --line-height-base: 1.5;
-    /* --layout-grid: [full-start] 1fr [content] minmax(0,1200px) 1fr [full-end] */
 
     h1,
     h2,

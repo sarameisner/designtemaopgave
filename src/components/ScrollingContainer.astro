@@ -46,72 +46,67 @@ const {values } = projectionsData;
 
 <style>
 
-html {
-     --gap: clamp(1rem, 6vw, 3rem);
-    --full: minmax(var(--gap), 1fr);
-    --content: min(75rem, 100% - var(--gap) * 2);
-}
-
 .scrolling {
-      grid-column: 1 / -1;
-      display: grid;
-      grid-template-columns: inherit;
-      row-gap: 4rem;
-      
-      > * {
-        grid-column: 2;
-      }
-      
-      > ul {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 4rem;
+    
+    > * {
+        grid-column: 1 / -1;
+    }
+    
+    > ul {
         scroll-snap-type: x mandatory;
         grid-column: 1 / -1;
-        padding-inline: max(1rem,50% - var(--content) / 10px);
+        padding-inline: 2rem; 
         padding-block-end: 1rem;
-        
     
         li {
-          scroll-snap-align: center;
-          &:first-child {
-            margin-left: calc(50% - var(--content) / 2);
-          }
-          &:last-child {
-            margin-right: calc(50% - var(--content) / 2);
-          }
+            scroll-snap-align: center;
+            &:first-child {
+                margin-left: 2rem; 
+            }
+            &:last-child {
+                margin-right: 2rem;
+            }
         }
-      }
-      .scrolling-top {
+    }
+    .scrolling-top {
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
         .text {
-          max-width: 50%;
-          .icon {
-            width: 100px;
-          }
+             max-width: 60%; 
+             margin: 0 auto; 
+        
+            .icon {
+                width: 100px;
+            }
         }
         .buttons {
-          display: flex;
-          gap: 20px;
+            display: flex;
+            gap: 20px;
         }
-      }
-  }
-
-
+    }
+}
 
 .scroll-arrow {
-    background: var(--heading-color);
-    color: var(--white-color);
+    background: var(--primary-color-03); /* Sort */
+    color: var(--secondary-color-02); /* Hvid */
     padding: 11px 14px;
     border-radius: 100px;
     cursor: pointer;
     align-items: center;
     justify-content: center;
-    &:last-child {
-      background-color: var(--primary-color);
-      color: black;
-    }
-  }
-  .full-width {
+}
+
+.scroll-arrow:last-child {
+    background-color: var(--primary-color-01);
+    color: var(--primary-color-03); 
+}
+
+.full-width {
     display: flex;
     gap: 1rem;
     overflow-x: auto;
@@ -119,43 +114,46 @@ html {
     margin-top: 0;
     
     li {
-      flex-basis: min(400px, 90%);
-      flex-shrink: 0;
-      background: #EBEBEB;
-      color: #595566;
-      border-radius: 8px;
-      font-size: 1rem;
-      padding: 2.75rem 2.1875rem;
-      align-self: start;
-      display: grid;
-      gap: 10px;
-      transition: all .4s ease-in-out;
-      cursor: pointer;
-     
-      &:hover {
-        background: var(--heading-color);
-        color: var(--white-color);
-        h3 {
-          color: var(--white-color);
-        }
-        .icon-card {
-          color: var(--primary-color);
-        }
-      }
-      h3 {
+        flex-basis: 400px;
+        flex-shrink: 0;
+        background: var(--secondary-color-01); 
+        color: #595566;
+        border-radius: 8px;
+        font-size: 1rem;
+        padding: 2.75rem 2.1875rem;
+        align-self: start;
+        display: grid;
+        gap: 10px;
+        transition: all .4s ease-in-out;
+        cursor: pointer;
+    }
+
+    li:hover {
+        background: var(--primary-color-03); 
+        color: var(--secondary-color-02); 
+    }
+    
+    li:hover h3 {
+        color: var(--secondary-color-02);
+    }
+
+    li:hover .icon-card {
+        color: var(--primary-color-01); 
+    }
+
+    h3 {
         font-weight: 700;
         font-size: 1.5625rem;
         transition: all .4s ease-in-out;
-      }
     }
+
     .icon-card {
-      width: 40px;
-      margin-bottom: 14px;
-      color: var(--heading-color);
-      transition: all .4s ease-in-out;
+        width: 40px;
+        margin-bottom: 14px;
+        color: var(--primary-color-03); 
+        transition: all .4s ease-in-out;
     }
-  }
-  
+}
 </style>
 
 
@@ -178,6 +176,3 @@ html {
     });
   });
 </script>
-    
-    
-   

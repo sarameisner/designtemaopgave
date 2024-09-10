@@ -4,6 +4,8 @@ import { Image } from "astro:assets";
 import sarah from "../assets/images/sarah.jpg";
 import Card from "../components/Card.astro";
 import HeroSecondSection from "../components/HeroSecondSection.astro"
+import ScrollingContainer from "../components/ScrollingContainer.astro";
+const projections = await fetch("https://raw.githubusercontent.com/Rasmus-Olsen/frontend-design/main/resources/json/projections.json").then((res) => res.json());
 ---
 
 <BaseLayout title="Home">
@@ -34,6 +36,7 @@ import HeroSecondSection from "../components/HeroSecondSection.astro"
     "Capitalize on low hanging fruit to identify a ballpark value added activity to beta test override the digital."
   ]}
 />
+<ScrollingContainer projections={projections} />
 </BaseLayout>
 
 <style>
