@@ -1,114 +1,105 @@
----
-
----
-
 <div class="container">
-<section class="case-box">
-    <div class="case-details">
-        <div class="case-info">
-            <div class="case-column">
-                <p class="case-title">Case Name</p>
-                <p>Taxes & Efficiency</p>
+    <section class="case-box">
+        <div class="case-details">
+            <div class="case-info">
+                <div class="case-column">
+                    <p class="case-title">Case Name</p>
+                    <p>Taxes & Efficiency</p>
+                </div>
+                <div class="case-column">
+                    <p class="case-title">Category</p>
+                    <p>Business</p>
+                </div>
+                <div class="case-column">
+                    <p class="case-title">Date</p>
+                    <p>27th September 2022</p>
+                </div>
             </div>
-            <div class="case-column">
-                <p class="case-title">Category</p>
-                <p>Business</p>
-            </div>
-            <div class="case-column">
-                <p class="case-title">Date</p>
-                <p>27th September 2022</p>
+            <div class="case-preview">
+                <a href="#" class="btn-primary">Live Preview</a>
             </div>
         </div>
-        <div class="case-preview">
-            <a href="#" class="btn-primary">Live Preview</a>
-        </div>
-    </div>
-</section>
+    </section>
 </div>
 
 <style>
-  
-  .container{
+  .container {
     padding: 2rem;
   }
 
-    .case-box {
-        position: relative;
-        margin-bottom: 2.5rem; 
-        background-image: url("../assets/casestudy.png");
-        height: 28.125rem; 
-        border-radius: 1.25rem;
-        padding: 1rem; 
+  .case-box {
+    margin-bottom: 2.5rem;
+    background-image: url("../assets/casestudy.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 28.125rem;
+    border-radius: 1.25rem;
+    padding: 1rem;
+    display: flex;
+    align-items: flex-end; 
+    justify-content: center;
+  }
 
-        .case-details {
-            display: flex;
-            justify-content: space-between;
-            padding: 2.5rem 3.75rem; 
-            background: var(--primary-color-03); 
-            color: var(--secondary-color-02); 
-            border-radius: 1.25rem; 
-            position: absolute;
-            bottom: -2.5rem; 
-            left: 50%;
-            transform: translateX(-50%);
-            width: 56.25rem; 
+  .case-details {
+    display: flex;
+    justify-content: space-between;
+    padding: 2.5rem 3.75rem;
+    background: var(--primary-color-03);
+    color: var(--secondary-color-02);
+    border-radius: 1.25rem;
+    width: 90%; 
+    max-width: 56.25rem; 
+    margin-bottom: -2.5rem; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+  }
 
-            
-            .case-info {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 2.5rem; 
-                
-                .case-column {
-                    .case-title {
-                        font-size: 1.25rem;
-                        font-weight: 600;
-                    }
-                }
-            }
-        }
+  .case-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
 
-        .case-preview {
-            align-self: center;
-        }
+  .case-column .case-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
 
-   
-        .btn-primary {
-            padding: 0.75rem 1.5rem;
-            background-color: var(--primary-color-01); 
-            color: var(--primary-color-03);
-            border: none;
-            border-radius: 1.25rem; 
-            text-decoration: none;
-            font-size: 1rem;
-            font-weight: 600;
-            transition: background-color 0.3s ease;
-        }
+  .case-preview {
+    align-self: center;
+  }
 
-        .btn-primary:hover {
-            background-color: var(--primary-color-02); 
-        }
+  .btn-primary {
+    padding: 0.75rem 1.5rem;
+    background-color: var(--primary-color-01);
+    color: var(--primary-color-03);
+    border: none;
+    border-radius: 1.25rem;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
 
-       
-        @media (max-width: 600px) {
+  .btn-primary:hover {
+    background-color: var(--primary-color-02);
+  }
 
-            .case-details {
-                width: 100%;
-                flex-direction: column;
-                position: static;
-                padding: 1.25rem; 
-                text-align: center;
-                top: auto;
-
-                .case-info {
-                    grid-template-columns: 1fr;
-                    gap: 1rem; 
-                }
-
-                .case-preview {
-                    margin-top: 1.25rem; 
-                }
-            }
-        }
+  @media (max-width: 600px) {
+    .case-details {
+      flex-direction: column;
+      width: 100%; 
+      padding: 1.25rem;
+      text-align: center;
     }
+
+    .case-info {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .case-preview {
+      margin-top: 1.25rem;
+    }
+  }
 </style>
