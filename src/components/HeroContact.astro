@@ -27,6 +27,7 @@ import { Icon } from 'astro-icon/components';
                 <div class="text">
                     <p>USA Office</p>
                     <p class="font-large">195 Devonshire St Boston, MA 02110</p>
+
                 </div>
             </div>
         </div>
@@ -40,11 +41,11 @@ import { Icon } from 'astro-icon/components';
 
 <style>
 @layer components {
-    .hero-contact {
+     .hero-contact {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 3rem;
+        gap: 2rem;
         padding: 2rem;
     }
 
@@ -102,6 +103,22 @@ import { Icon } from 'astro-icon/components';
         grid-template-rows: repeat(2, 1fr);
         gap: 1rem;
         flex: 1;
+         &::before {
+                opacity: 0.8;
+                --square-count: 14;
+                --square-size: 1.34rem;
+                --_square-size: var(--square-size, 1rem);
+                --_square-half: calc(var(--square-size) / 2);
+                --_square-sum: calc(var(--square-count)* var(--square-size));
+                z-index: 2;
+                content: "";
+                position: absolute;
+                inline-size: calc(round(var(--_square-sum), var(--_square-size)) - var(--_square-half));
+                aspect-ratio: 1;
+                background: linear-gradient(135deg, #BE965D, #976F40, #C99B61, #F0BE7B, #FFCB85, #EEBC79, #C0935B, #976F40) 0 0 / 100% 100%;
+                mask: var(--square-pattern) 0 0 / var(--_square-size) var(--_square-size), var(--square-pattern) var(--_square-half) var(--_square-half) / var(--_square-size) var(--_square-size);
+                right: -40px;
+            }
     }
 
     .img-wrapper img {
@@ -109,6 +126,7 @@ import { Icon } from 'astro-icon/components';
         object-fit: cover;
         width: 100%;
         height: 100%;
+        z-index: 2;
 
     
     }

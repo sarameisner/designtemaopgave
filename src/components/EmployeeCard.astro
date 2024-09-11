@@ -17,7 +17,7 @@ if (!images[img])
 ---
 
 <article>
-  <a class="card-wrapper" href={`/${slug}`}>
+  <a class="card-container" href={`/${slug}`}>
     <div class="image-title">
       <Image src={images[img]()} alt={name} width={300} height={300} />
       <p class="employees-title">{title}</p>
@@ -53,7 +53,7 @@ if (!images[img])
       gap: 1.5rem; 
       padding: 1rem;
       background: var(--secondary-color-01); 
-      border-radius: 1.25rem; /* 20px */
+      border-radius: 1.25rem; 
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
       transition: transform 0.3s ease, box-shadow 0.3s ease;
 
@@ -62,7 +62,7 @@ if (!images[img])
         box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
       }
 
-      .card-wrapper {
+      .card-container {
         .image-title {
           position: relative;
 
@@ -86,7 +86,7 @@ if (!images[img])
         transition: background-color 0.3s ease;
       }
 .employees-title:hover {
-  background: var(--primary-color-01); /* Change background on hover */
+  background: var(--primary-color-01); 
 }
       .text {
         text-align: center;
