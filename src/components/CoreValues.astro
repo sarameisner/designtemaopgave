@@ -49,123 +49,127 @@ const { surface = 'primary', tag, heading, button, description } = Astro.props
 <style>
    @layer components {
 
-    [data-surface="primary"] {
-        --background-color: var(--primary-color-03); 
-        --text-color: var(--secondary-color-02); 
-        --corevalues-heading-color: var(--secondary-color-02); 
-        --tag-color: var(--primary-color-03);
-        li {
-            --card-color: var(--secondary-color-01); 
-            h6 {
-                --heading-color-card: var(--secondary-color-02); 
-            }
+  
+  [data-surface="primary"] {
+    --background-color: var(--primary-color-03); 
+    --text-color: var(--secondary-color-02); 
+    --corevalues-heading-color: var(--secondary-color-02); 
+    --tag-color: var(--primary-color-03);
+    li {
+      --card-color: var(--secondary-color-01); 
+      h6 {
+        --heading-color-card: var(--secondary-color-02); 
+      }
+    }
+  }
+
+  [data-surface="secondary"] {
+    --background-color: var(--secondary-color-01); 
+    --corevalues-heading-color: var(--primary-color-03); 
+    --tag-color: var(--primary-color-03); 
+    li {
+      --card-color: var(--secondary-color-02); 
+    }
+  }
+
+  .text-card h6 {
+    font-weight: 600;
+    font-size: 1.25rem; 
+  }
+
+  .core-values {
+    gap: 2rem; /* 34px */
+    display: grid;
+    background: var(--background-color);
+    color: var(--text-color);
+    padding: 5rem 3.75rem; 
+
+    .core-values-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      .text {
+        max-width: 60%;
+
+        h1 {
+          font-weight: bold;
+          margin-bottom: 1rem; 
+          color: var(--corevalues-heading-color)!important;
+          font-size: 2rem; 
         }
-    }
 
-    [data-surface="secondary"] {
-        --background-color: var(--secondary-color-01); 
-        --corevalues-heading-color: var(--primary-color-03); 
-        --tag-color: var(--primary-color-03); 
-        li {
-            --card-color: var(--secondary-color-02); 
+        .tag {
+          padding: 0 0.9375rem; 
+          background: var(--primary-color-01); 
+          display: inline-block;
+          border-radius: 1.25rem; 
+          margin-bottom: 1rem; 
+          color: var(--tag-color);
         }
+      }
     }
 
-    .text-card h6 {
-        font-weight: 600;
-        font-size: 20px;
-    }
+    .full-width {
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      column-gap: 1.875rem; 
+      list-style: none;
+      padding: 0;
 
-    .core-values {
-        gap: 34px;
+      li {
+        background: var(--card-color);
+        padding: 2.25rem 1.4375rem; 
+        border-radius: 1.25rem;
         display: grid;
-        background: var(--background-color);
-        color: var(--text-color);
-        padding: 80px 60px;
+        gap: 1.375rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-        .core-values-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-
-            .text {
-                max-width: 60%;
-                h1 {
-                    font-weight: bold;
-                    margin-bottom: 16px;
-                    color: var(--corevalues-heading-color)!important;
-                }
-
-                .tag {
-                    padding: 0px 15px;
-                    background: var(--primary-color-01); 
-                    display: inline-block;
-                    border-radius: 20px;
-                    margin-bottom: 16px;
-                    color: var(--tag-color);
-                }
-            }
+        p {
+          color: var(--primary-color-03); 
         }
 
-        .full-width {
-            margin: 0;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            column-gap: 30px;
-            list-style: none;
-            padding: 0;
-
-            li {
-                background: var(--card-color);
-                padding: 36px 23px;
-                border-radius: 20px;
-                display: grid;
-                gap: 22px;
-                transition: transform 0.3s ease, box-shadow 0.3s ease; 
-
-                p {
-                    color: var(--primary-color-03); 
-                }
-
-                .icon-card {
-                    width: 50px;
-                }
-
-                .read-more a {
-                    font-size: 20px;
-                    color: var(--primary-color-03); 
-                    font-weight: 600;
-                    text-decoration: none;
-                }
-
-                /* Hover Effekt */
-                &:hover {
-                    transform: translateY(-10px);
-                    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-                }
-            }
+        .icon-card {
+          width: 3.125rem; 
         }
+
+        .read-more a {
+          font-size: 1.25rem; 
+          color: var(--primary-color-03); 
+          font-weight: 600;
+          text-decoration: none;
+        }
+
+      
+        &:hover {
+          transform: translateY(-0.625rem); 
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); 
+        }
+      }
+    }
+  }
+
+  
+   @media (max-width: 768px) {
+    .core-values {
+      padding: 1.875rem 0.9375rem; 
     }
 
-    @media (max-width: 768px) {
-        .core-values {
-            padding: 30px 15px;
-        }
-
-        .full-width {
-            grid-template-columns: 1fr; 
-            row-gap: 20px;
-        }
-
-        .core-values-top .text {
-            text-align: center;
-        }
-
-        .btn-secondary {
-            width: 100%;
-            text-align: center;
-        }
+    .core-values ul.full-width {
+      grid-template-columns: 1fr !important; 
+      row-gap: 1.25rem !important; 
     }
+
+    .core-values-top .text {
+      text-align: center;
+    }
+
+    .btn-secondary {
+      width: 100%;
+      text-align: center;
+    }
+  }
 }
 
 </style>
