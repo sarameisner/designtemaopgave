@@ -6,6 +6,7 @@ import Card from "../components/Card.astro";
 import HeroSecondSection from "../components/HeroSecondSection.astro"
 import ScrollingContainer from "../components/ScrollingContainer.astro";
 const projections = await fetch("https://raw.githubusercontent.com/Rasmus-Olsen/frontend-design/main/resources/json/projections.json").then((res) => res.json());
+import Experience from "../components/Experience.astro";
 import CoreValues from "../components/CoreValues.astro";
 const coreValues = await fetch("https://raw.githubusercontent.com/sarameisner/frontend-design/main/resources/json/corevalues.json").then((res) => res.json());
 import HeroContact from "../components/HeroContact.astro";
@@ -41,6 +42,7 @@ import HeroContact from "../components/HeroContact.astro";
   ]}
 />
 <ScrollingContainer projections={projections} />
+<Experience />
   <CoreValues coreValues={coreValues} surface="primary" tag="Growing with our Client" heading="Our core values & principles" button="Get in touch" description="Capitalize on low hanging fruit to identify a ballpark value added activity beta test. Override the digital divide with additional from DevOps."/>
   <HeroContact />
 </BaseLayout>
@@ -50,6 +52,7 @@ import HeroContact from "../components/HeroContact.astro";
 body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 .hero-grid {
