@@ -71,31 +71,39 @@ const { surface = 'primary', tag, heading, button, description } = Astro.props
         }
     }
 
+    .text-card h6 {
+        font-weight: 600;
+        font-size: 20px;
+    }
+
     .core-values {
         gap: 34px;
         display: grid;
         background: var(--background-color);
         color: var(--text-color);
-        padding: 80px 60px;;
+        padding: 80px 60px;
+
         .core-values-top {
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
 
-        .text {
-        max-width: 60%;
-        h1 {
-        margin-bottom: 16px;
-        color: var(--corevalues-heading-color)!important;
-        }
-        .tag {
-        padding: 0px 15px;
-        background: var(--primary-color-01); 
-        display: inline-block;
-        border-radius: 20px;
-         margin-bottom: 16px;
-         color: var(--tag-color);
-         }
+            .text {
+                max-width: 60%;
+                h1 {
+                    font-weight: bold;
+                    margin-bottom: 16px;
+                    color: var(--corevalues-heading-color)!important;
+                }
+
+                .tag {
+                    padding: 0px 15px;
+                    background: var(--primary-color-01); 
+                    display: inline-block;
+                    border-radius: 20px;
+                    margin-bottom: 16px;
+                    color: var(--tag-color);
+                }
             }
         }
 
@@ -106,31 +114,40 @@ const { surface = 'primary', tag, heading, button, description } = Astro.props
             column-gap: 30px;
             list-style: none;
             padding: 0;
+
             li {
                 background: var(--card-color);
                 padding: 36px 23px;
                 border-radius: 20px;
                 display: grid;
                 gap: 22px;
+                transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition for hover */
+
                 p {
                     color: var(--primary-color-03); 
                 }
+
                 .icon-card {
                     width: 50px;
                 }
-                .read-more {
-                    a {
-                        color: var(--primary-color-03); 
-                        font-weight: 600;
-                        text-decoration: none;
-                    }
+
+                .read-more a {
+                    font-size: 20px;
+                    color: var(--primary-color-03); 
+                    font-weight: 600;
+                    text-decoration: none;
+                }
+
+                /* Hover Effekt */
+                &:hover {
+                    transform: translateY(-10px);
+                    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
                 }
             }
         }
     }
-}
 
-@media (max-width: 768px) {
+    @media (max-width: 768px) {
         .core-values {
             padding: 30px 15px;
         }
@@ -149,5 +166,6 @@ const { surface = 'primary', tag, heading, button, description } = Astro.props
             text-align: center;
         }
     }
+}
 
 </style>
