@@ -17,17 +17,17 @@ const { surface = 'team', tag, headline } = Astro.props;
      
   @layer components {
    
-    /* de forskellige baggrundsbilleder baseret på surface propsene */
+    /* de tre forskellige baggrundsbilleder baseret på surface propsene */
     [data-surface="team"] {
-      --background-image: url("src/assets/images/hero-team.jpeg");  
+      --background-image: url("/images/hero-team.jpeg");  
     }
     
     [data-surface="about"] {
-      --background-image: url("src/assets/images/hero-about.jpeg");  
+      --background-image: url("/images/hero-about.jpeg");  
     }
 
     [data-surface="case"] {
-      --background-image: url("src/assets/images/hero-case.jpeg");  
+      --background-image: url("/images/hero-case.jpeg");  
     }
 
     
