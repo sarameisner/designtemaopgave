@@ -2,10 +2,7 @@
 const coreValues = await fetch("https://raw.githubusercontent.com/sarameisner/frontend-design/main/resources/json/corevalues.json").then((res) => res.json());
 import { Icon } from 'astro-icon/components';
 const {values } = coreValues;
-
 const { surface = 'primary', tag, heading, button, description } = Astro.props
-
-
 ---
 
 
@@ -48,7 +45,6 @@ const { surface = 'primary', tag, heading, button, description } = Astro.props
 
 <style>
    @layer components {
-
   
   [data-surface="primary"] {
     --background-color: var(--primary-color-03); 
@@ -78,7 +74,7 @@ const { surface = 'primary', tag, heading, button, description } = Astro.props
   }
 
   .core-values {
-    gap: 2rem; /* 34px */
+    gap: 2rem; 
     display: grid;
     background: var(--background-color);
     color: var(--text-color);
